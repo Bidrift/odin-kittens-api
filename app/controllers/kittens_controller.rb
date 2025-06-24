@@ -15,7 +15,7 @@ class KittensController < ApplicationController
         @kitten = Kitten.new(kitten_params)
         if @kitten.save
             flash['notice'] = "A new kitten has been created."
-            redirect_to kitten_path
+            redirect_to kitten_path @kitten
         else
             flash.now['alert'] = "Something has prevented the creation of this kitten."
             render :new, status: :unprocessable_entity
@@ -41,7 +41,7 @@ class KittensController < ApplicationController
         @kitten = Kitten.find(params[:id])
         if @kitten.update(kitten_params)
             flash['notice'] = "Kitten attributes have been updated"
-            redirect_to kitten_path
+            redirect_to kitten_path @kitten
         else
             flash.now['alert'] = "Something has prevented the edit of this kitten."
             render :edit, status: :unprocessable_entity
