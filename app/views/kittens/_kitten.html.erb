@@ -1,0 +1,8 @@
+<h3>Kitten <%= kitten.id %></h3>
+<ul>
+    <li><strong>Kitten name:</strong> <%= link_to kitten.name, kitten_path(kitten) %></li>
+    <li><strong>Kitten age:</strong> <%= pluralize(kitten.age,'year') %> old</li>
+    <li><strong>Kitten softness:</strong> <%= kitten.softness %></li>
+    <li><strong>Kitten cuteness:</strong> <%= kitten.cuteness %></li>
+</ul>
+<%= button_to "Delete kitten", kitten_path(kitten), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>

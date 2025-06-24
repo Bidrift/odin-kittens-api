@@ -1,0 +1,5 @@
+<h2>This is the page for kitten # <%= @kitten.id %></h2>
+
+<%= render partial: 'kitten', locals: { kitten: @kitten } %>
+
+<%= button_to "Edit kitten", edit_kitten_path(@kitten), method: :get %>

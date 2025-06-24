@@ -1,0 +1,7 @@
+<%= simple_form_for @kitten do |f| %>
+    <%= f.input :name, as: :string, required: true, html_input: { minlength: 3, maxlength: 50 } %>
+    <%= f.input :age, as: :integer, required: true, html_input: { min: 1 } %>
+    <%= f.input :softness, as: :integer, required: true %>
+    <%= f.input :cuteness, as: :integer, required: true %>
+    <%= f.button :submit %>
+<% end %>
